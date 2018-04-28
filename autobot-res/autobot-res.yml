@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: autobot-res
+  datasource:
+    url: jdbc:mysql://rm-uf6p1li8923139633o.mysql.rds.aliyuncs.com:3306/autobot?useSSL=true
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      max-idle: 10
+      max-wait: 10000
+      min-idle: 5
+      initial-size: 5
+      max-active: 20
+    
+server:
+  port: 8010
+  session:
+    timeout: 10
+  tomcat:
+    uri-encoding: UTF-8
+    
+mybatis:
+  mapper-locations:
+  - classpath:mapping/*/*.xml      
+  
+eureka:
+  instance:
+    prefer-ip-address: true # 注册时使用ip而不是主机名
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8000/eureka/,http://127.0.0.2:8000/eureka/
+      
+from: git-dev-1.0      

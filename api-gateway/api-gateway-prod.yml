@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-gateway
+  
+    
+server:
+  port: 8016
+  session:
+    timeout: 10
+  tomcat:
+    uri-encoding: UTF-8
+    
+zuul:
+  routes:
+    service-auto: 
+      path: /api-auto/**
+      service-id: autobot-res
